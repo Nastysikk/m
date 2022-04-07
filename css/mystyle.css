@@ -1,0 +1,65 @@
+
+/*
+input {
+    width: 150px;
+    height: 40px;
+}
+ */
+ .navbar{
+background: rgb(211,161,114);
+background: -moz-linear-gradient(left,  rgba(211,161,114,1) 0%, rgba(68,162,191,1) 100%);
+background: -webkit-linear-gradient(left,  rgba(211,161,114,1) 0%,rgba(68,162,191,1) 100%);
+background: linear-gradient(to right,  rgba(211,161,114,1) 0%,rgba(68,162,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3a172', endColorstr='#44a2bf',GradientType=1 );
+}
+body
+{
+    background-color: #f2f2f2;
+    font-family: "Georgia";
+    font-size: 16px;
+    color:black;
+    -webkit-font-smoothing:antialised;
+    -webkit-overflow-scrolling:touch;
+}
+select[name="termin"].ng-dirty
+{
+    background-color: #e69773;
+}
+select[name="valute"].ng-touched
+{
+    font-size: 20px;
+    border: 5px solid #11baf2;
+}
+input[name = "suma"].ng-dirty
+{
+    background-color: #fc1297;
+}
+
+button{
+    font-family: "Georgia";
+    font-size: 16px;
+    margin-left: 40px;
+    border-radius: 30px;
+}
+
+h4,p
+{
+    font-family: "Georgia";
+    color: black;            
+}
+form.ng-dirty{
+    background-color:rgba(68,162,191,1);
+}
+
+form.ng-pristine 
+{
+    background-color:rgba(68,162,191,1);
+}
+form{
+    font-family: "Georgia";
+    padding-left: 375px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

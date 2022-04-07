@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Форма</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/w3.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/mystyle.css"></link>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+     
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="js/angular.min.js"></script> 
+
+        </head>
+<body > 
+  <header ng-include="'menu.html'">  </header>
+    <div class="w3-container container shadow" ng-app="myFormApp" ng-controller="formCtrl">
+    <form  name="myForm"  novalidate>
+            <label for="suma">Сума вкладу*.</label> 
+
+                <input type="number" name ="suma" size = "8" ng-model = "forms.suma" required depositsum>
+                 <span style="color:red;" ng-show="myForm.suma.$error.depositsum">Мінімальна сума вкладу - 100, також сума має бути круглою.<br></span>
+                <select size ="1" ng-model = "forms.valute" name="valute">
+                   <option value ="euro">євро</option> 
+                   <option value ="dolar">долари</option>
+                   <option value ="hrv">гривні</option>
+               </select>
+
+               <p><label for="stavka">Ставка(%)*.</label> 
+                <input type="text" name ="stavka" ng-model = "forms.stavka"  required="true" ng-pattern="re">
+                <span ng-show="myForm.stavka.$error.pattern" style="color:red">
+                Ставка повинна бути дійсним числом і лише від 0 до 9.
+            </span>
+                
+               </p>
+               <label for="termin">Термін*.</label>
+               <select name ="termin" size ="1" ng-model="forms.termin" required="true">
+                   <option value ="1month">1 місяць.</option> 
+                   <option value ="2months">2 місяці.</option>
+                   <option value ="3months">3 місяці.</option>
+                   <option value ="4months">4 місяці.</option>
+                   <option value ="6months">6 місяців.</option>
+                   <option value ="8months">8 місяців.</option>
+                   <option value ="10months">10 місяців.</option>
+                   <option value ="12months">12 місяців.</option>
+               </select>
+               <p> <input type="checkbox" ng-model="forms.procents" name="procent"> Проценти нараховувати щомісяця</br>
+                <span style ="font-size: 20px" ng-show="forms.procents" for="termin">Оберіть Вашу кількість відсотків</span>
+               <select name="proc" ng-show="forms.procents" type="text" ng-model="forms.procent"/>
+              <option value ="5p">5%</option> 
+                   <option value ="7p">7%</option>
+               </select></p>
+               <p> <input type="checkbox" ng-model="forms.terminofdeposit" name="te">Нагадати мені про закінчення терміну депозиту </p>
+               <p><label for="phone">Мій телефон: </label> 
+                <input type="tel" name="phone" ng-model = "forms.telephone" required="true" ng-maxlength="10"><br>
+             <span class="shadow"  ng-show="myForm.phone.$touched && myForm.phone.$invalid">Телефон має бути введений обов'язково та має мати не більше 10 цифр</span></p>
+               
+               <p><button type="submit" ng-click="save(forms, myForm)" class="btn btn-success" ng-disabled="myForm.$invalid">Порахувати кінцеву суму</button></p>
+
+    </form>
+</div>
+    <script src="js/myForm.js"></script>   
+</body>
+</html>
